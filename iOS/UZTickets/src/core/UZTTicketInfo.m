@@ -25,60 +25,45 @@
     NSCharacterSet* newlines = [NSCharacterSet newlineCharacterSet];
     
     NSScanner* scanner = [NSScanner scannerWithString:infoString];
-    scanner.charactersToBeSkipped = newlines;
+    scanner.charactersToBeSkipped = [NSCharacterSet whitespaceAndNewlineCharacterSet];
     
-    NSString* trainName;
-    [scanner scanUpToCharactersFromSet:newlines intoString:&trainName];
+    NSString*(^scanLine)() = ^() {
+        NSString* result;
+        [scanner scanUpToCharactersFromSet:newlines intoString:&result];
+        
+        return result;
+    };
     
-    NSString* departureStation;
-    [scanner scanUpToCharactersFromSet:newlines intoString:&departureStation];
+    NSNumber*(^scanNumber)() = ^() {
+        NSInteger result;
+        [scanner scanInteger:&result];
+        
+        return @(result);
+    };
     
-    NSString* arrivalStattion;
-    [scanner scanUpToCharactersFromSet:newlines intoString:&arrivalStattion];
+    _trainName = scanLine();
     
-    NSString* departureDate;
-    [scanner scanUpToCharactersFromSet:newlines intoString:&departureDate];
+    _departureStation = scanLine();
+    _arrivalStation = scanLine();
     
-    NSString* arrivalDate;
-    [scanner scanUpToCharactersFromSet:newlines intoString:&arrivalDate];
+    scanLine(); // skip departure date
+    scanLine(); // skip arrival date
     
-    NSInteger wagonNumber;
-    [scanner scanInteger:&wagonNumber];
+    _wagonNumber = scanNumber();
+    _wagonType = scanLine();
     
-    NSString* wagonKind;
-    scanner.scanLocation += 1;
-    [scanner scanUpToCharactersFromSet:newlines intoString:&wagonKind];
+    _seatNumber = scanNumber();
+    _seatType = scanLine();
     
-    NSInteger seatNumber;
-    [scanner scanInteger:&seatNumber];
+    scanLine(); // skip "....."
     
-    NSString* seatKind;
-    scanner.scanLocation += 1;
-    [scanner scanUpToCharactersFromSet:newlines intoString:&seatKind];
-    
-    [scanner scanUpToCharactersFromSet:newlines intoString:NULL];
-    
-    NSString* passenger;
-    [scanner scanUpToCharactersFromSet:newlines intoString:&passenger];
+    _passengerFullname = scanLine();
    
-    [scanner scanUpToCharactersFromSet:newlines intoString:NULL];
-    [scanner scanUpToCharactersFromSet:newlines intoString:NULL];
+    scanLine(); // skip "МПС"
+    scanLine(); // skip "0.00"
     
-    NSString* ticketCode;
-    [scanner scanUpToCharactersFromSet:newlines intoString:&ticketCode];
-    
-    _trainName = trainName;
-    _departureStation = departureStation;
-    _arrivalStation = arrivalStattion;
-    _departureTime = nil;
-    _arrivalTime = nil;
-    _wagonNumber = @(wagonNumber);
-    _wagonType = wagonKind;
-    _seatNumber = @(seatNumber);
-    _seatType = seatKind;
-    _passengerFullname = passenger;
-    _ticketCode = ticketCode;
-    
+    _ticketCode = scanLine();
+        
     return self;
 }
 
