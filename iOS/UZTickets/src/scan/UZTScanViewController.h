@@ -8,9 +8,26 @@
 
 @import UIKit;
 
-@class UZTScanViewModel;
+@protocol UZTScanViewModelProtocol
+
+- (void)didStartInitializingScanView;
+- (void)didInitializeScanView;
+- (void)didReadQRCode:(NSString*)code;
+
+@end
+
+
+
 @interface UZTScanViewController : UIViewController
 
-@property UZTScanViewModel* viewModel;
+@property id<UZTScanViewModelProtocol> viewModel;
+
++ (BOOL)canScan;
+
+@end
+
+
+
+@interface UZTScanViewModel : NSObject <UZTScanViewModelProtocol>
 
 @end
