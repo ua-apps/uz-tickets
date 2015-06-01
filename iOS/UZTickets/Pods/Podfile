@@ -1,0 +1,13 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+
+workspace '../UZTickets'
+xcodeproj '../UZTickets'
+
+inhibit_all_warnings!
+
+# target 'UZTickets' do
+# end
+
+# target 'UZTickets Tests' do
+# end
