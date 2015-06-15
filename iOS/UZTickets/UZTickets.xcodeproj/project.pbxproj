@@ -12,7 +12,6 @@
 		4888024E1B1C4DAA004E3CBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 488802401B1C4DAA004E3CBA /* main.m */; };
 		4888024F1B1C4DAA004E3CBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488802421B1C4DAA004E3CBA /* Images.xcassets */; };
 		488802521B1C4DAA004E3CBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 488802481B1C4DAA004E3CBA /* AppDelegate.m */; };
-		488802541B1C4DAA004E3CBA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4888024B1B1C4DAA004E3CBA /* ViewController.m */; };
 		488802551B1C4DE1004E3CBA /* UZTicketsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 488802451B1C4DAA004E3CBA /* UZTicketsTests.m */; };
 		488802581B1C5016004E3CBA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4888025A1B1C5016004E3CBA /* LaunchScreen.xib */; };
 		4888025B1B1C501F004E3CBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4888025D1B1C501F004E3CBA /* Main.storyboard */; };
@@ -44,8 +43,6 @@
 		488802451B1C4DAA004E3CBA /* UZTicketsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UZTicketsTests.m; sourceTree = "<group>"; };
 		488802471B1C4DAA004E3CBA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		488802481B1C4DAA004E3CBA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4888024A1B1C4DAA004E3CBA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4888024B1B1C4DAA004E3CBA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		488802591B1C5016004E3CBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4888025C1B1C501F004E3CBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		488802611B1C607E004E3CBA /* UZTTicketInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UZTTicketInfo.h; sourceTree = "<group>"; };
@@ -139,8 +136,6 @@
 				488802471B1C4DAA004E3CBA /* AppDelegate.h */,
 				488802481B1C4DAA004E3CBA /* AppDelegate.m */,
 				4888025D1B1C501F004E3CBA /* Main.storyboard */,
-				4888024A1B1C4DAA004E3CBA /* ViewController.h */,
-				4888024B1B1C4DAA004E3CBA /* ViewController.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -258,7 +253,6 @@
 				4888024E1B1C4DAA004E3CBA /* main.m in Sources */,
 				488802631B1C607E004E3CBA /* UZTTicketInfo.m in Sources */,
 				2220A5041B2A2DBF0035407E /* UZTTicketsListViewModel.m in Sources */,
-				488802541B1C4DAA004E3CBA /* ViewController.m in Sources */,
 				2220A5011B2A2D8A0035407E /* UZTTicketsListViewController.m in Sources */,
 				488802521B1C4DAA004E3CBA /* AppDelegate.m in Sources */,
 			);

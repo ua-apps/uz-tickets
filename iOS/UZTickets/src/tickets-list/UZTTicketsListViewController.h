@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UZTTicketsListViewController : UIViewController
+@class UZTTicketsListViewModel;
+@interface UZTTicketsListViewController : UITableViewController
+
+@property IBOutlet UZTTicketsListViewModel* viewModel;
 
 @end
