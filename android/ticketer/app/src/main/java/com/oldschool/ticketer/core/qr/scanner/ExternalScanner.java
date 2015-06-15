@@ -3,7 +3,7 @@ package com.oldschool.ticketer.core.qr.scanner;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import com.oldschool.ticketer.core.datamodel.Ticket;
+import com.oldschool.ticketer.models.datamodels.Ticket;
 
 public class ExternalScanner implements TicketScanner {
     @Override
@@ -22,20 +22,8 @@ public class ExternalScanner implements TicketScanner {
     @Override
     public Ticket parseData(Intent response) {
         String qrData = response.getStringExtra("SCAN_RESULT");
-
-
-        String format = response.getStringExtra("SCAN_RESULT_FORMAT");
-
-
         Ticket ticket = new Ticket();
-
-
         ticket.parseString(qrData);
-
-
-
-
-
         return ticket;
     }
 }

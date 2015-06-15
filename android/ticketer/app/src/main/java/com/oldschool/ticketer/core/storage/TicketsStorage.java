@@ -1,6 +1,6 @@
 package com.oldschool.ticketer.core.storage;
 
-import com.oldschool.ticketer.core.datamodel.Ticket;
+import com.oldschool.ticketer.models.datamodels.Ticket;
 
 import java.util.List;
 

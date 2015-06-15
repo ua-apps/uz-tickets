@@ -2,7 +2,7 @@ package com.oldschool.ticketer.core.storage;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import com.oldschool.ticketer.core.datamodel.Ticket;
+import com.oldschool.ticketer.models.datamodels.Ticket;
 
 import java.util.ArrayList;
 import java.util.HashSet;

@@ -1,14 +1,13 @@
-package com.oldschool.ticketer.ui.dashboard;
+package com.oldschool.ticketer.view.dashboard;
 
 import android.content.Intent;
-import android.os.Bundle;
 import butterknife.OnClick;
 import com.oldschool.ticketer.R;
-import com.oldschool.ticketer.core.datamodel.Ticket;
+import com.oldschool.ticketer.models.datamodels.Ticket;
 import com.oldschool.ticketer.core.qr.scanner.ExternalScanner;
 import com.oldschool.ticketer.core.qr.scanner.TicketScanner;
-import com.oldschool.ticketer.ui.base.AppNavigator;
-import com.oldschool.ticketer.ui.base.BaseActivity;
+import com.oldschool.ticketer.view.base.AppNavigator;
+import com.oldschool.ticketer.view.base.BaseActivity;
 
 public class DashboardActivity extends BaseActivity {
     private final int LAYOUT_ID = R.layout.activity_dashboard;

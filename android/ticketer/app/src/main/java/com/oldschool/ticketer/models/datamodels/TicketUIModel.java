@@ -1,9 +1,9 @@
-package com.oldschool.ticketer.core.datamodel;
+package com.oldschool.ticketer.models.datamodels;
 
 
 import java.io.Serializable;
 
-public class Ticket implements Serializable {
+public class TicketUIModel implements Serializable {
 
     private String allData;
     private String trainName;//063 ОА ФІРМ НШ - Train name

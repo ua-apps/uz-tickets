@@ -1,10 +1,10 @@
-package com.oldschool.ticketer.ui.base;
+package com.oldschool.ticketer.view.base;
 
 import android.content.Context;
 import android.content.Intent;
-import com.oldschool.ticketer.core.datamodel.Ticket;
-import com.oldschool.ticketer.ui.ticketlist.TicketsListActivity;
-import com.oldschool.ticketer.ui.ticketpreview.TicketPreviewActivity;
+import com.oldschool.ticketer.models.datamodels.Ticket;
+import com.oldschool.ticketer.view.ticketlist.TicketsListActivity;
+import com.oldschool.ticketer.view.ticketpreview.TicketPreviewActivity;
 
 public class AppNavigator {
     public void showTicketsList(Context from) {

@@ -1,4 +1,4 @@
-package com.oldschool.ticketer.ui.base;
+package com.oldschool.ticketer.view.base;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;

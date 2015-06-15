@@ -1,4 +1,4 @@
-package com.oldschool.ticketer.ui.ticketlist;
+package com.oldschool.ticketer.view.ticketlist;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,8 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.oldschool.ticketer.R;
-import com.oldschool.ticketer.core.datamodel.Ticket;
-import com.oldschool.ticketer.ui.base.AppNavigator;
+import com.oldschool.ticketer.models.datamodels.Ticket;
+import com.oldschool.ticketer.view.base.AppNavigator;
 
 import java.util.List;
 

@@ -1,16 +1,15 @@
-package com.oldschool.ticketer.ui.ticketlist;
+package com.oldschool.ticketer.view.ticketlist;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import butterknife.InjectView;
-import butterknife.OnItemClick;
 import com.oldschool.ticketer.R;
-import com.oldschool.ticketer.core.datamodel.Ticket;
+import com.oldschool.ticketer.models.datamodels.Ticket;
 import com.oldschool.ticketer.core.storage.TicketSharedPreferences;
 import com.oldschool.ticketer.core.storage.TicketsStorage;
-import com.oldschool.ticketer.ui.base.AppNavigator;
-import com.oldschool.ticketer.ui.base.BaseActivity;
+import com.oldschool.ticketer.view.base.AppNavigator;
+import com.oldschool.ticketer.view.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
