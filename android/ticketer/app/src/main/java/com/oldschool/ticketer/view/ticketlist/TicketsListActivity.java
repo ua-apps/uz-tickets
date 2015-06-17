@@ -7,8 +7,8 @@ import butterknife.InjectView;
 import com.oldschool.ticketer.R;
 import com.oldschool.ticketer.models.datamodels.Ticket;
 import com.oldschool.ticketer.core.storage.TicketSharedPreferences;
-import com.oldschool.ticketer.core.storage.TicketsStorage;
-import com.oldschool.ticketer.view.base.AppNavigator;
+import com.oldschool.ticketer.core.storage.base.TicketsStorage;
+import com.oldschool.ticketer.view.navigation.DefaultNavigator;
 import com.oldschool.ticketer.view.base.BaseActivity;
 
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import java.util.List;
 
 public class TicketsListActivity extends BaseActivity {
     private final int LAYOUT_ID = R.layout.activity_tickets_list;
-    private AppNavigator navigator = new AppNavigator();
+    private DefaultNavigator navigator = new DefaultNavigator();
     private TicketsListAdapter adapter;
     private List<Ticket> tickets;
     private TicketsStorage ticketsStorage;

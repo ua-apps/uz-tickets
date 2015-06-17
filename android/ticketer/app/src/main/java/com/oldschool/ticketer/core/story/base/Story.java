@@ -1,7 +1,7 @@
-package com.oldschool.ticketer.core.stories;
+package com.oldschool.ticketer.core.story.base;
 
-import com.oldschool.ticketer.core.stories.executor.PostExecutionThread;
-import com.oldschool.ticketer.core.stories.executor.ThreadExecutor;
+import com.oldschool.ticketer.core.story.executor.PostExecutionThread;
+import com.oldschool.ticketer.core.story.executor.ThreadExecutor;
 import rx.Observable;
 import rx.Subscriber;
 import rx.Subscription;

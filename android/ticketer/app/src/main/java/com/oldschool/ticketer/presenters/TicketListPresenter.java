@@ -1,15 +1,18 @@
 package com.oldschool.ticketer.presenters;
 
-import android.support.annotation.NonNull;
-import com.oldschool.ticketer.core.stories.Story;
+import com.oldschool.ticketer.core.story.base.DefaultSubscriber;
+import com.oldschool.ticketer.core.story.base.Story;
+import com.oldschool.ticketer.di.StoryModule;
 import com.oldschool.ticketer.models.datamodels.TicketUIModel;
 import com.oldschool.ticketer.models.mappers.TicketUIModelMapper;
 import com.oldschool.ticketer.models.datamodels.Ticket;
+import com.oldschool.ticketer.presenters.base.Presenter;
 import com.oldschool.ticketer.view.ticketlist.TicketListView;
 import java.util.Collection;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
+import android.support.annotation.NonNull;
 
 public class TicketListPresenter extends DefaultSubscriber<List<Ticket>> implements Presenter {
 
@@ -19,7 +22,7 @@ public class TicketListPresenter extends DefaultSubscriber<List<Ticket>> impleme
     private final TicketUIModelMapper ticketUIModelMapper;
 
     @Inject
-    public TicketListPresenter(@Named("ticketList") Story getTicketListStory, TicketUIModelMapper ticketUIModelMapper) {
+    public TicketListPresenter(@Named(StoryModule.TICKET_LIST) Story getTicketListStory, TicketUIModelMapper ticketUIModelMapper) {
         this.getTicketListStory = getTicketListStory;
         this.ticketUIModelMapper = ticketUIModelMapper;
     }
@@ -61,8 +64,7 @@ public class TicketListPresenter extends DefaultSubscriber<List<Ticket>> impleme
         this.ticketListView.hideLoading();
     }
 
-    private void showErrorMessage(ErrorBundle errorBundle) {
-        String errorMessage = ErrorMessageFactory.create(this.viewListView.getContext(), errorBundle.getException());
+    private void showErrorMessage(String errorMessage) {
         this.ticketListView.showError(errorMessage);
     }
 
@@ -81,7 +83,7 @@ public class TicketListPresenter extends DefaultSubscriber<List<Ticket>> impleme
 
     @Override public void onError(Throwable e) {
         this.hideViewLoading();
-        this.showErrorMessage(new DefaultErrorBundle((Exception) e));
+        this.showErrorMessage(e.getMessage());
     }
 
     @Override public void onNext(List<Ticket> tickets) {

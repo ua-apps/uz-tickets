@@ -8,19 +8,19 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import com.oldschool.ticketer.R;
 import com.oldschool.ticketer.models.datamodels.Ticket;
-import com.oldschool.ticketer.view.base.AppNavigator;
+import com.oldschool.ticketer.view.navigation.DefaultNavigator;
 
 import java.util.List;
 
 public class TicketsListAdapter extends RecyclerView.Adapter<TicketsListAdapter.TicketViewHolder> {
     private List<Ticket> ticketsList;
     private Context context;
-    private AppNavigator navigator;
+    private DefaultNavigator navigator;
 
     public TicketsListAdapter(Context context, List<Ticket> ticketsList) {
         this.context = context;
         this.ticketsList = ticketsList;
-        navigator = new AppNavigator();
+        navigator = new DefaultNavigator();
     }
 
     @Override

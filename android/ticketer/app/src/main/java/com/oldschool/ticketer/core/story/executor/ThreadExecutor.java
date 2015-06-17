@@ -1,4 +1,4 @@
-package com.oldschool.ticketer.core.stories.executor;
+package com.oldschool.ticketer.core.story.executor;
 
 import java.util.concurrent.Executor;
 

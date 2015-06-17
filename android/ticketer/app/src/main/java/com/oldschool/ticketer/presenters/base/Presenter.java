@@ -1,4 +1,4 @@
-package com.oldschool.ticketer.presenters;
+package com.oldschool.ticketer.presenters.base;
 
 /**
  * Interface representing a Presenter in a model view presenter (MVP) pattern.

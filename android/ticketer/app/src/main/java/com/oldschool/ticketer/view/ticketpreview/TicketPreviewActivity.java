@@ -12,7 +12,7 @@ import com.oldschool.ticketer.models.datamodels.Ticket;
 import com.oldschool.ticketer.core.qr.creator.QRCreator;
 import com.oldschool.ticketer.core.qr.creator.QRProvider;
 import com.oldschool.ticketer.core.storage.TicketSharedPreferences;
-import com.oldschool.ticketer.core.storage.TicketsStorage;
+import com.oldschool.ticketer.core.storage.base.TicketsStorage;
 import com.oldschool.ticketer.view.base.BaseActivity;
 
 public class TicketPreviewActivity extends BaseActivity {

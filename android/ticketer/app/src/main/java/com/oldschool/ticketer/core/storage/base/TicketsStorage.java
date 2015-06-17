@@ -1,4 +1,4 @@
-package com.oldschool.ticketer.core.storage;
+package com.oldschool.ticketer.core.storage.base;
 
 import com.oldschool.ticketer.models.datamodels.Ticket;
 

@@ -6,12 +6,12 @@ import com.oldschool.ticketer.R;
 import com.oldschool.ticketer.models.datamodels.Ticket;
 import com.oldschool.ticketer.core.qr.scanner.ExternalScanner;
 import com.oldschool.ticketer.core.qr.scanner.TicketScanner;
-import com.oldschool.ticketer.view.base.AppNavigator;
+import com.oldschool.ticketer.view.navigation.DefaultNavigator;
 import com.oldschool.ticketer.view.base.BaseActivity;
 
 public class DashboardActivity extends BaseActivity {
     private final int LAYOUT_ID = R.layout.activity_dashboard;
-    private AppNavigator navigator = new AppNavigator();
+    private DefaultNavigator navigator = new DefaultNavigator();
     private TicketScanner scanner = new ExternalScanner();
     private final int CODE_DO_SCAN = 0;
 
