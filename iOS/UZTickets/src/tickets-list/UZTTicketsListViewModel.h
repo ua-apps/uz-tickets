@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@class UZTTicketInfo;
+
+NS_ASSUME_NONNULL_BEGIN
 @interface UZTTicketsListViewModel : NSObject
 
+@property (readonly) NSArray* tickets;
+
+- (void)addNewTicket;
+- (void)didSelectTicket:(UZTTicketInfo*)ticket;
+
 @end
+NS_ASSUME_NONNULL_END
