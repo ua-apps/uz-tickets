@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @class UZTTicketInfo;
+@class UZTTicketDetailsViewModel;
 
 NS_ASSUME_NONNULL_BEGIN
 @interface UZTTicketsListViewModel : NSObject
 
 @property (readonly) NSArray* tickets;
+@property (readonly, nullable) UZTTicketDetailsViewModel* selectedTicketViewModel;
 
 - (void)addNewTicket;
 - (void)didSelectTicket:(UZTTicketInfo*)ticket;

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2220A5011B2A2D8A0035407E /* UZTTicketsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2220A5001B2A2D8A0035407E /* UZTTicketsListViewController.m */; };
 		2220A5041B2A2DBF0035407E /* UZTTicketsListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2220A5031B2A2DBF0035407E /* UZTTicketsListViewModel.m */; };
+		22B5C1B51B45A51D00F595B8 /* UZTTicketDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5C1B41B45A51D00F595B8 /* UZTTicketDetailsViewController.m */; };
+		22B5C1B81B45A56300F595B8 /* UZTTicketDetailsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5C1B71B45A56300F595B8 /* UZTTicketDetailsViewModel.m */; };
 		4888024E1B1C4DAA004E3CBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 488802401B1C4DAA004E3CBA /* main.m */; };
 		4888024F1B1C4DAA004E3CBA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488802421B1C4DAA004E3CBA /* Images.xcassets */; };
 		488802521B1C4DAA004E3CBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 488802481B1C4DAA004E3CBA /* AppDelegate.m */; };
@@ -34,6 +36,10 @@
 		2220A5001B2A2D8A0035407E /* UZTTicketsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UZTTicketsListViewController.m; sourceTree = "<group>"; };
 		2220A5021B2A2DBF0035407E /* UZTTicketsListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UZTTicketsListViewModel.h; sourceTree = "<group>"; };
 		2220A5031B2A2DBF0035407E /* UZTTicketsListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UZTTicketsListViewModel.m; sourceTree = "<group>"; };
+		22B5C1B31B45A51D00F595B8 /* UZTTicketDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UZTTicketDetailsViewController.h; sourceTree = "<group>"; };
+		22B5C1B41B45A51D00F595B8 /* UZTTicketDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UZTTicketDetailsViewController.m; sourceTree = "<group>"; };
+		22B5C1B61B45A56300F595B8 /* UZTTicketDetailsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UZTTicketDetailsViewModel.h; sourceTree = "<group>"; };
+		22B5C1B71B45A56300F595B8 /* UZTTicketDetailsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UZTTicketDetailsViewModel.m; sourceTree = "<group>"; };
 		488801FF1B1C4A59004E3CBA /* UZTickets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UZTickets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		488802181B1C4A5A004E3CBA /* UZTicketsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UZTicketsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4888023E1B1C4DAA004E3CBA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +84,18 @@
 			);
 			name = "tickets list";
 			path = "tickets-list";
+			sourceTree = "<group>";
+		};
+		22B5C1B21B44345700F595B8 /* ticket details */ = {
+			isa = PBXGroup;
+			children = (
+				22B5C1B31B45A51D00F595B8 /* UZTTicketDetailsViewController.h */,
+				22B5C1B41B45A51D00F595B8 /* UZTTicketDetailsViewController.m */,
+				22B5C1B61B45A56300F595B8 /* UZTTicketDetailsViewModel.h */,
+				22B5C1B71B45A56300F595B8 /* UZTTicketDetailsViewModel.m */,
+			);
+			name = "ticket details";
+			path = "ticket-details";
 			sourceTree = "<group>";
 		};
 		488801F61B1C4A59004E3CBA = {
@@ -131,6 +149,7 @@
 		488802461B1C4DAA004E3CBA /* src */ = {
 			isa = PBXGroup;
 			children = (
+				22B5C1B21B44345700F595B8 /* ticket details */,
 				2220A4FE1B2A2D3E0035407E /* tickets list */,
 				488802601B1C6042004E3CBA /* core */,
 				488802471B1C4DAA004E3CBA /* AppDelegate.h */,
@@ -255,6 +274,8 @@
 				2220A5041B2A2DBF0035407E /* UZTTicketsListViewModel.m in Sources */,
 				2220A5011B2A2D8A0035407E /* UZTTicketsListViewController.m in Sources */,
 				488802521B1C4DAA004E3CBA /* AppDelegate.m in Sources */,
+				22B5C1B51B45A51D00F595B8 /* UZTTicketDetailsViewController.m in Sources */,
+				22B5C1B81B45A56300F595B8 /* UZTTicketDetailsViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
