@@ -7,7 +7,11 @@
 //
 
 #import "UZTTicketsListViewController.h"
+
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 #import "UZTTicketsListViewModel.h"
+#import "UZTTicketDetailsViewController.h"
 
 @interface UZTTicketsListViewController ()
 
@@ -21,7 +25,10 @@
 {
     [super viewDidLoad];
     
-    
+    [self rac_liftSelector:@selector(navigateToTicketDetails)
+     withSignalOfArguments:[[RACObserve(self, viewModel.selectedTicketViewModel)
+                             filter:^BOOL(id value) { return (value != nil); }]
+                            mapReplace:[RACTuple new]]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -34,6 +41,30 @@
                                       animated:YES];
         self.selectedCellIndexPath = nil;
     }
+}
+
+- (void)navigateToTicketDetails
+{
+    [self performSegueWithIdentifier:@"ticket details" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ticket details"])
+    {
+        UZTTicketDetailsViewController* viewController = segue.destinationViewController;
+        viewController.viewModel = self.viewModel.selectedTicketViewModel;
+    }
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    return NO;
+}
+
+- (IBAction)unwind:(UIStoryboardSegue*)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDataSource
@@ -74,7 +105,5 @@
         [self.viewModel didSelectTicket:self.viewModel.tickets[indexPath.row-1]];
     }
 }
-
-
 
 @end

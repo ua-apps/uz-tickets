@@ -111,20 +111,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X93-cs-fTG">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X93-cs-fTG">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="LFI-hm-yOb"/>
+                                    <constraint firstAttribute="height" constant="300" id="jSv-sX-DBM"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="X93-cs-fTG" secondAttribute="trailing" id="BaB-YD-AEN"/>
-                            <constraint firstAttribute="bottom" secondItem="X93-cs-fTG" secondAttribute="bottom" id="OSY-xa-8zb"/>
-                            <constraint firstItem="X93-cs-fTG" firstAttribute="leading" secondItem="3io-e4-kTB" secondAttribute="leading" id="cCS-wK-dHW"/>
-                            <constraint firstItem="X93-cs-fTG" firstAttribute="top" secondItem="3io-e4-kTB" secondAttribute="top" id="rsa-HB-Y3m"/>
+                            <constraint firstAttribute="centerX" secondItem="X93-cs-fTG" secondAttribute="centerX" id="7w3-2a-W88"/>
+                            <constraint firstAttribute="centerY" secondItem="X93-cs-fTG" secondAttribute="centerY" id="8to-bW-O16"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="9II-2e-mVP" appends="YES" id="jB3-Cu-nFV"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="qrCodeImageView" destination="X93-cs-fTG" id="mZP-EU-ASD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bf-VW-2DC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="9II-2e-mVP">
+                    <connections>
+                        <segue destination="9ga-Jx-WHd" kind="unwind" unwindAction="unwind:" id="sNa-cR-gUz"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <exit id="9ga-Jx-WHd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1540" y="389"/>
         </scene>

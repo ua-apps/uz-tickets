@@ -8,30 +8,42 @@
 
 #import "UZTTicketDetailsViewController.h"
 
+#import <ReactiveCocoa/ReactiveCocoa.h>
+@import CoreImage;
+@import QuartzCore;
+
+#import "UZTTicketDetailsViewModel.h"
+
 @interface UZTTicketDetailsViewController ()
+
+@property IBOutlet UIImageView* qrCodeImageView;
 
 @end
 
 @implementation UZTTicketDetailsViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.qrCodeImageView.image = [UIImage imageWithCIImage:
+                                  [CIFilter filterWithName:@"CIQRCodeGenerator"
+                                       withInputParameters:@{@"inputMessage": self.viewModel.qrData,
+                                                             @"inputCorrectionLevel": @"H"}].outputImage];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [[UIScreen mainScreen] setBrightness:1.];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[UIScreen mainScreen] setBrightness:[UIScreen mainScreen].brightness];
+    
+    [super viewWillDisappear:animated];
 }
-*/
 
 @end

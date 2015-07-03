@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface UZTTicketDetailsViewModel : NSObject
 
-@property (readonly) UZTTicketInfo* ticket;
+@property (nonnull, readonly) NSData* qrData;
 
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;

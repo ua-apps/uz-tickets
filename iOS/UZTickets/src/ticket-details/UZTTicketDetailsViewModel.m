@@ -7,10 +7,11 @@
 //
 
 #import "UZTTicketDetailsViewModel.h"
+#import "UZTTicketInfo.h"
 
 @interface UZTTicketDetailsViewModel ()
 
-@property UZTTicketInfo* ticket;
+@property NSData* qrData;
 
 @end
 
@@ -25,7 +26,7 @@
 {
     self = [super init];
     
-    self.ticket = ticket;
+    self.qrData = [ticket.infoString dataUsingEncoding:NSUTF8StringEncoding];
     
     return self;
 }
