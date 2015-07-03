@@ -16,12 +16,12 @@
 
 @implementation UZTTicketDetailsViewModel
 
-+ (instancetype)newWithTicket:(nonnull UZTTicketInfo*)ticket
++ (nonnull instancetype)newWithTicket:(nonnull UZTTicketInfo*)ticket
 {
     return [[self alloc] initWithTicket:ticket];
 }
 
-- (instancetype)initWithTicket:(nonnull UZTTicketInfo*)ticket
+- (nonnull instancetype)initWithTicket:(nonnull UZTTicketInfo*)ticket
 {
     self = [super init];
     

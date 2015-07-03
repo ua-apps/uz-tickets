@@ -80,7 +80,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="cMk-rk-Lb6" kind="showDetail" id="UZE-Gh-M63"/>
+                                    <segue destination="cMk-rk-Lb6" kind="showDetail" identifier="ticket details" id="UZE-Gh-M63"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -111,23 +111,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fz-ZW-wy4" userLabel="Passenger name">
-                                <rect key="frame" x="279" y="290" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJR-18-P5d">
-                                <rect key="frame" x="279" y="290" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X93-cs-fTG">
-                                <rect key="frame" x="-9" y="39" width="600" height="600"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X93-cs-fTG">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="X93-cs-fTG" secondAttribute="trailing" id="BaB-YD-AEN"/>
+                            <constraint firstAttribute="bottom" secondItem="X93-cs-fTG" secondAttribute="bottom" id="OSY-xa-8zb"/>
+                            <constraint firstItem="X93-cs-fTG" firstAttribute="leading" secondItem="3io-e4-kTB" secondAttribute="leading" id="cCS-wK-dHW"/>
+                            <constraint firstItem="X93-cs-fTG" firstAttribute="top" secondItem="3io-e4-kTB" secondAttribute="top" id="rsa-HB-Y3m"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bf-VW-2DC" userLabel="First Responder" sceneMemberID="firstResponder"/>
