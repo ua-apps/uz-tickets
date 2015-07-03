@@ -17,6 +17,7 @@
 @interface UZTTicketDetailsViewController ()
 
 @property IBOutlet UIImageView* qrCodeImageView;
+@property CGFloat brightness;
 
 @end
 
@@ -36,12 +37,14 @@
 {
     [super viewWillAppear:animated];
     
+    self.brightness = [UIScreen mainScreen].brightness;
+    
     [[UIScreen mainScreen] setBrightness:1.];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [[UIScreen mainScreen] setBrightness:[UIScreen mainScreen].brightness];
+    [[UIScreen mainScreen] setBrightness:self.brightness];
     
     [super viewWillDisappear:animated];
 }
