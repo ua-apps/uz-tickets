@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2220A5011B2A2D8A0035407E /* UZTTicketsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2220A5001B2A2D8A0035407E /* UZTTicketsListViewController.m */; };
+		2220A5041B2A2DBF0035407E /* UZTTicketsListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2220A5031B2A2DBF0035407E /* UZTTicketsListViewModel.m */; };
 		223332141B1C641A00440D79 /* UZTScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223332131B1C641A00440D79 /* UZTScanViewController.m */; };
 		223332151B1C641A00440D79 /* UZTScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223332131B1C641A00440D79 /* UZTScanViewController.m */; };
-		3C06A6149888DDC95E249A10 /* libPods-UZTickets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF4D6353AF0ECDC6C78D6096 /* libPods-UZTickets.a */; };
+		22B5C1B51B45A51D00F595B8 /* UZTTicketDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5C1B41B45A51D00F595B8 /* UZTTicketDetailsViewController.m */; };
+		22B5C1B81B45A56300F595B8 /* UZTTicketDetailsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5C1B71B45A56300F595B8 /* UZTTicketDetailsViewModel.m */; };
 		48165B6F1B1C98F10002BF91 /* UZTScanViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 48165B6E1B1C98F10002BF91 /* UZTScanViewModel.m */; };
 		48165B721B1C9A970002BF91 /* UZTScanSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 48165B711B1C9A970002BF91 /* UZTScanSession.m */; };
 		4888024E1B1C4DAA004E3CBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 488802401B1C4DAA004E3CBA /* main.m */; };
@@ -20,6 +23,8 @@
 		4888025B1B1C501F004E3CBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4888025D1B1C501F004E3CBA /* Main.storyboard */; };
 		488802631B1C607E004E3CBA /* UZTTicketInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 488802621B1C607E004E3CBA /* UZTTicketInfo.m */; };
 		488802651B1C63AA004E3CBA /* UZTTicketInfoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 488802641B1C63AA004E3CBA /* UZTTicketInfoTests.m */; };
+		C2F71623C6525B1D68DFFEE6 /* libPods-UZTicketsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B5BCD4D0CE930CD6F8D1D08 /* libPods-UZTicketsTests.a */; };
+		C301AFC21210A422FC5061E7 /* libPods-UZTickets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF4D6353AF0ECDC6C78D6096 /* libPods-UZTickets.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,8 +38,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04C789B7565E892FB0A5964B /* Pods-UZTickets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UZTickets.release.xcconfig"; path = "../Pods/Pods/Target Support Files/Pods-UZTickets/Pods-UZTickets.release.xcconfig"; sourceTree = "<group>"; };
+		0B5BCD4D0CE930CD6F8D1D08 /* libPods-UZTicketsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UZTicketsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2220A4FF1B2A2D8A0035407E /* UZTTicketsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UZTTicketsListViewController.h; sourceTree = "<group>"; };
+		2220A5001B2A2D8A0035407E /* UZTTicketsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UZTTicketsListViewController.m; sourceTree = "<group>"; };
+		2220A5021B2A2DBF0035407E /* UZTTicketsListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UZTTicketsListViewModel.h; sourceTree = "<group>"; };
+		2220A5031B2A2DBF0035407E /* UZTTicketsListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UZTTicketsListViewModel.m; sourceTree = "<group>"; };
 		223332121B1C641A00440D79 /* UZTScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UZTScanViewController.h; sourceTree = "<group>"; };
 		223332131B1C641A00440D79 /* UZTScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UZTScanViewController.m; sourceTree = "<group>"; };
+		22B5C1B31B45A51D00F595B8 /* UZTTicketDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UZTTicketDetailsViewController.h; sourceTree = "<group>"; };
+		22B5C1B41B45A51D00F595B8 /* UZTTicketDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UZTTicketDetailsViewController.m; sourceTree = "<group>"; };
+		22B5C1B61B45A56300F595B8 /* UZTTicketDetailsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UZTTicketDetailsViewModel.h; sourceTree = "<group>"; };
+		22B5C1B71B45A56300F595B8 /* UZTTicketDetailsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UZTTicketDetailsViewModel.m; sourceTree = "<group>"; };
 		48165B6D1B1C98F10002BF91 /* UZTScanViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UZTScanViewModel.h; sourceTree = "<group>"; };
 		48165B6E1B1C98F10002BF91 /* UZTScanViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UZTScanViewModel.m; sourceTree = "<group>"; };
 		48165B701B1C9A970002BF91 /* UZTScanSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UZTScanSession.h; sourceTree = "<group>"; };
@@ -53,8 +68,9 @@
 		488802611B1C607E004E3CBA /* UZTTicketInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UZTTicketInfo.h; sourceTree = "<group>"; };
 		488802621B1C607E004E3CBA /* UZTTicketInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UZTTicketInfo.m; sourceTree = "<group>"; };
 		488802641B1C63AA004E3CBA /* UZTTicketInfoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UZTTicketInfoTests.m; sourceTree = "<group>"; };
-		DAA2C9B36224BBCE38927E35 /* Pods-UZTickets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UZTickets.debug.xcconfig"; path = "Pods/Pods/Target Support Files/Pods-UZTickets/Pods-UZTickets.debug.xcconfig"; sourceTree = "<group>"; };
-		DDF008C3C866BEC831C6EE91 /* Pods-UZTickets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UZTickets.release.xcconfig"; path = "Pods/Pods/Target Support Files/Pods-UZTickets/Pods-UZTickets.release.xcconfig"; sourceTree = "<group>"; };
+		4EA9F0B827472DBBAFEDAA6A /* Pods-UZTicketsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UZTicketsTests.release.xcconfig"; path = "../Pods/Pods/Target Support Files/Pods-UZTicketsTests/Pods-UZTicketsTests.release.xcconfig"; sourceTree = "<group>"; };
+		9C5D3B695746497EFE3E72EC /* Pods-UZTicketsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UZTicketsTests.debug.xcconfig"; path = "../Pods/Pods/Target Support Files/Pods-UZTicketsTests/Pods-UZTicketsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DAA2C9B36224BBCE38927E35 /* Pods-UZTickets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UZTickets.debug.xcconfig"; path = "../Pods/Pods/Target Support Files/Pods-UZTickets/Pods-UZTickets.debug.xcconfig"; sourceTree = "<group>"; };
 		EF4D6353AF0ECDC6C78D6096 /* libPods-UZTickets.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UZTickets.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -63,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C06A6149888DDC95E249A10 /* libPods-UZTickets.a in Frameworks */,
+				C301AFC21210A422FC5061E7 /* libPods-UZTickets.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,12 +87,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2F71623C6525B1D68DFFEE6 /* libPods-UZTicketsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2220A4FE1B2A2D3E0035407E /* tickets list */ = {
+			isa = PBXGroup;
+			children = (
+				2220A4FF1B2A2D8A0035407E /* UZTTicketsListViewController.h */,
+				2220A5001B2A2D8A0035407E /* UZTTicketsListViewController.m */,
+				2220A5021B2A2DBF0035407E /* UZTTicketsListViewModel.h */,
+				2220A5031B2A2DBF0035407E /* UZTTicketsListViewModel.m */,
+			);
+			name = "tickets list";
+			path = "tickets-list";
+			sourceTree = "<group>";
+		};
 		2233320D1B1C601400440D79 /* scan */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +117,18 @@
 				48165B711B1C9A970002BF91 /* UZTScanSession.m */,
 			);
 			path = scan;
+			sourceTree = "<group>";
+		};
+		22B5C1B21B44345700F595B8 /* ticket details */ = {
+			isa = PBXGroup;
+			children = (
+				22B5C1B31B45A51D00F595B8 /* UZTTicketDetailsViewController.h */,
+				22B5C1B41B45A51D00F595B8 /* UZTTicketDetailsViewController.m */,
+				22B5C1B61B45A56300F595B8 /* UZTTicketDetailsViewModel.h */,
+				22B5C1B71B45A56300F595B8 /* UZTTicketDetailsViewModel.m */,
+			);
+			name = "ticket details";
+			path = "ticket-details";
 			sourceTree = "<group>";
 		};
 		488801F61B1C4A59004E3CBA = {
@@ -144,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				2233320D1B1C601400440D79 /* scan */,
+				22B5C1B21B44345700F595B8 /* ticket details */,
+				2220A4FE1B2A2D3E0035407E /* tickets list */,
 				488802601B1C6042004E3CBA /* core */,
 				488802471B1C4DAA004E3CBA /* AppDelegate.h */,
 				488802481B1C4DAA004E3CBA /* AppDelegate.m */,
@@ -173,7 +216,9 @@
 			isa = PBXGroup;
 			children = (
 				DAA2C9B36224BBCE38927E35 /* Pods-UZTickets.debug.xcconfig */,
-				DDF008C3C866BEC831C6EE91 /* Pods-UZTickets.release.xcconfig */,
+				9C5D3B695746497EFE3E72EC /* Pods-UZTicketsTests.debug.xcconfig */,
+				4EA9F0B827472DBBAFEDAA6A /* Pods-UZTicketsTests.release.xcconfig */,
+				04C789B7565E892FB0A5964B /* Pods-UZTickets.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -185,11 +230,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 488802221B1C4A5A004E3CBA /* Build configuration list for PBXNativeTarget "UZTickets" */;
 			buildPhases = (
-				1E4FF371C714EBCF86B6B195 /* Check Pods Manifest.lock */,
+				C8593FB601BAE7453A7F68F5 /* Check Pods Manifest.lock */,
 				488801FB1B1C4A59004E3CBA /* Sources */,
 				488801FC1B1C4A59004E3CBA /* Frameworks */,
 				488801FD1B1C4A59004E3CBA /* Resources */,
-				BA98E5AF8D2C3653E2C4FFD8 /* Copy Pods Resources */,
+				44F04479BD554DED436540CF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -204,9 +249,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 488802251B1C4A5A004E3CBA /* Build configuration list for PBXNativeTarget "UZTicketsTests" */;
 			buildPhases = (
+				673C28E273E7F6C153770A1B /* Check Pods Manifest.lock */,
 				488802141B1C4A5A004E3CBA /* Sources */,
 				488802151B1C4A5A004E3CBA /* Frameworks */,
 				488802161B1C4A5A004E3CBA /* Resources */,
+				0B58E8C6F5E4B0AFC19D53A2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -278,7 +325,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1E4FF371C714EBCF86B6B195 /* Check Pods Manifest.lock */ = {
+		0B58E8C6F5E4B0AFC19D53A2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Pods/Target Support Files/Pods-UZTicketsTests/Pods-UZTicketsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44F04479BD554DED436540CF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Pods/Target Support Files/Pods-UZTickets/Pods-UZTickets-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		673C28E273E7F6C153770A1B /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -293,19 +370,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		BA98E5AF8D2C3653E2C4FFD8 /* Copy Pods Resources */ = {
+		C8593FB601BAE7453A7F68F5 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods/Target Support Files/Pods-UZTickets/Pods-UZTickets-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -318,9 +395,13 @@
 				4888024E1B1C4DAA004E3CBA /* main.m in Sources */,
 				48165B721B1C9A970002BF91 /* UZTScanSession.m in Sources */,
 				488802631B1C607E004E3CBA /* UZTTicketInfo.m in Sources */,
+				2220A5041B2A2DBF0035407E /* UZTTicketsListViewModel.m in Sources */,
+				2220A5011B2A2D8A0035407E /* UZTTicketsListViewController.m in Sources */,
 				488802521B1C4DAA004E3CBA /* AppDelegate.m in Sources */,
 				223332141B1C641A00440D79 /* UZTScanViewController.m in Sources */,
 				48165B6F1B1C98F10002BF91 /* UZTScanViewModel.m in Sources */,
+				22B5C1B51B45A51D00F595B8 /* UZTTicketDetailsViewController.m in Sources */,
+				22B5C1B81B45A56300F595B8 /* UZTTicketDetailsViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,7 +481,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -437,7 +518,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -459,7 +540,7 @@
 		};
 		488802241B1C4A5A004E3CBA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DDF008C3C866BEC831C6EE91 /* Pods-UZTickets.release.xcconfig */;
+			baseConfigurationReference = 04C789B7565E892FB0A5964B /* Pods-UZTickets.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -472,6 +553,7 @@
 		};
 		488802261B1C4A5A004E3CBA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C5D3B695746497EFE3E72EC /* Pods-UZTicketsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -491,6 +573,7 @@
 		};
 		488802271B1C4A5A004E3CBA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EA9F0B827472DBBAFEDAA6A /* Pods-UZTicketsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

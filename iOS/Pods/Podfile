@@ -1,0 +1,20 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+workspace '../UZTickets.xcworkspace'
+xcodeproj '../UZTickets/UZTickets.xcodeproj/'
+
+platform :ios, '8.0'
+inhibit_all_warnings!
+
+target 'UZTickets' do
+
+pod 'ReactiveCocoa'
+
+end
+
+target 'UZTicketsTests' do
+
+pod 'OCMock'
+
+end
+
