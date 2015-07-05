@@ -142,5 +142,27 @@
             </objects>
             <point key="canvasLocation" x="1540" y="389"/>
         </scene>
+        <!--Scan View Controller-->
+        <scene sceneID="hZK-RT-6UM">
+            <objects>
+                <viewController id="RL5-bf-cbA" customClass="UZTScanViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iug-GE-P8a"/>
+                        <viewControllerLayoutGuide type="bottom" id="EZw-f7-KZS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9En-87-kzb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="viewModel" destination="AE6-Jx-kAb" id="DJY-6B-2qr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QQo-mp-hwr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="AE6-Jx-kAb" userLabel="View Model" customClass="UZTScanViewModel"/>
+            </objects>
+            <point key="canvasLocation" x="233" y="1013"/>
+        </scene>
     </scenes>
 </document>
