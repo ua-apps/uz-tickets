@@ -12,6 +12,7 @@
 
 #import "UZTTicketsListViewModel.h"
 #import "UZTTicketDetailsViewController.h"
+#import "UZTScanViewController.h"
 
 @interface UZTTicketsListViewController ()
 
@@ -27,6 +28,11 @@
     
     [self rac_liftSelector:@selector(navigateToTicketDetails)
      withSignalOfArguments:[[RACObserve(self, viewModel.selectedTicketViewModel)
+                             filter:^BOOL(id value) { return (value != nil); }]
+                            mapReplace:[RACTuple new]]];
+    
+    [self rac_liftSelector:@selector(navigateToAddTicket)
+     withSignalOfArguments:[[RACObserve(self, viewModel.scanViewModel)
                              filter:^BOOL(id value) { return (value != nil); }]
                             mapReplace:[RACTuple new]]];
 }
@@ -48,12 +54,22 @@
     [self performSegueWithIdentifier:@"ticket details" sender:self];
 }
 
+- (void)navigateToAddTicket
+{
+    [self performSegueWithIdentifier:@"scan" sender:self];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"ticket details"])
     {
         UZTTicketDetailsViewController* viewController = segue.destinationViewController;
         viewController.viewModel = self.viewModel.selectedTicketViewModel;
+    }
+    else if ([segue.identifier isEqualToString:@"scan"])
+    {
+        UZTScanViewController* viewController = segue.destinationViewController;
+        viewController.viewModel = self.viewModel.scanViewModel;
     }
 }
 
@@ -96,6 +112,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.selectedCellIndexPath = indexPath;
+    
     if (indexPath.row == 0)
     {
         [self.viewModel addNewTicket];

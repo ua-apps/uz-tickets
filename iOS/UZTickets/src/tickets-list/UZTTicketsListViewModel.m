@@ -9,12 +9,13 @@
 #import "UZTTicketsListViewModel.h"
 #import "UZTTicketInfo.h"
 #import "UZTTicketDetailsViewModel.h"
-
+#import "UZTScanViewModel.h"
 
 @interface UZTTicketsListViewModel ()
 
 @property NSArray* tickets;
 @property UZTTicketDetailsViewModel* selectedTicketViewModel;
+@property UZTScanViewModel* scanViewModel;
 
 @end
 
@@ -33,7 +34,7 @@
 
 - (void)addNewTicket
 {
-    
+    self.scanViewModel = [UZTScanViewModel new];
 }
 
 - (void)didSelectTicket:(nonnull UZTTicketInfo*)ticket

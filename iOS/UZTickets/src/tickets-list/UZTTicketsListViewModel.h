@@ -10,12 +10,14 @@
 
 @class UZTTicketInfo;
 @class UZTTicketDetailsViewModel;
+@class UZTScanViewModel;
 
 NS_ASSUME_NONNULL_BEGIN
 @interface UZTTicketsListViewModel : NSObject
 
 @property (readonly) NSArray* tickets;
 @property (readonly, nullable) UZTTicketDetailsViewModel* selectedTicketViewModel;
+@property (readonly, nullable) UZTScanViewModel* scanViewModel;
 
 - (void)addNewTicket;
 - (void)didSelectTicket:(UZTTicketInfo*)ticket;

@@ -35,6 +35,9 @@
                                         <constraint firstItem="vZQ-LA-FNW" firstAttribute="top" secondItem="1v1-f9-QEm" secondAttribute="topMargin" id="VAj-4J-Y9o"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="RL5-bf-cbA" kind="show" identifier="scan" id="omj-sW-0gC"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ticket cell" id="UnX-rI-Glq" userLabel="Ticket Cell">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -156,13 +159,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="viewModel" destination="AE6-Jx-kAb" id="DJY-6B-2qr"/>
+                        <segue destination="6Dm-zo-9Ec" kind="unwind" unwindAction="unwind:" id="Jfu-s6-Lhu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QQo-mp-hwr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="AE6-Jx-kAb" userLabel="View Model" customClass="UZTScanViewModel"/>
+                <exit id="6Dm-zo-9Ec" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="233" y="1013"/>
+            <point key="canvasLocation" x="846" y="1088"/>
         </scene>
     </scenes>
 </document>

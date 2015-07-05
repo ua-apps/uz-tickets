@@ -11,6 +11,6 @@
 @class UZTScanViewModel;
 @interface UZTScanViewController : UIViewController
 
-@property IBOutlet UZTScanViewModel* viewModel;
+@property UZTScanViewModel* viewModel;
 
 @end
