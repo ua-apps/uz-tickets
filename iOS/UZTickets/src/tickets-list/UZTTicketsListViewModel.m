@@ -11,6 +11,21 @@
 #import "UZTTicketDetailsViewModel.h"
 #import "UZTScanViewModel.h"
 
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
+@interface UZTTicketCellViewModel ()
+
+@property (nonnull) UZTTicketInfo* ticket;
+
+@property NSString* passenger;
+@property NSString* train;
+@property NSString* wagon;
+@property NSString* route;
+
+@end
+
+
+
 @interface UZTTicketsListViewModel ()
 
 @property NSArray* tickets;
@@ -25,9 +40,15 @@
 {
     self = [super init];
     
-    _tickets = @[
-                 [UZTTicketInfo newWithString:@"063 ОА ФІРМ НШ (2204001) ХАРЬКОВ-ПАСС (2200001) КИЕВ-ПАССАЖИРСКИЙ 22.11 22:20 23.11 07:07 01 КБ 027 Повний .......... АЛЕКСЕЙ ДЕМЕДЕЦКИЙ MПC 0.00 000B37D3-61738C35-0001 50182 CBCE3F97619DA86CF45297C1D8ABB3ED75D1A0CD"],
-                 [UZTTicketInfo newWithString:@"063 ОА ФІРМ НШ (2204001) ХАРЬКОВ-ПАСС (2200001) КИЕВ-ПАССАЖИРСКИЙ 22.11 22:20 23.11 07:07 01 КБ 027 Повний .......... АЛЕКСЕЙ ДЕМЕДЕЦКИЙ MПC 0.00 000B37D3-61738C35-0001 50182 CBCE3F97619DA86CF45297C1D8ABB3ED75D1A0CD"]];
+    self.tickets = @[];
+    
+    @weakify(self);
+    [[RACObserve(self, scanViewModel.scannedTicket).distinctUntilChanged filter:^BOOL(id value) {
+        return (value != nil);
+    }] subscribeNext:^(UZTTicketInfo* ticket) {
+        @strongify(self);
+        self.tickets = [self.tickets arrayByAddingObject:[UZTTicketCellViewModel newWithTicket:ticket]];
+    }];
     
     return self;
 }
@@ -37,9 +58,33 @@
     self.scanViewModel = [UZTScanViewModel new];
 }
 
-- (void)didSelectTicket:(nonnull UZTTicketInfo*)ticket
+- (void)didSelectTicket:(nonnull UZTTicketCellViewModel*)ticket
 {
-    self.selectedTicketViewModel = [UZTTicketDetailsViewModel newWithTicket:ticket];
+    self.selectedTicketViewModel = [UZTTicketDetailsViewModel newWithTicket:ticket.ticket];
+}
+
+@end
+
+
+
+@implementation UZTTicketCellViewModel
+
++ (nonnull instancetype)newWithTicket:(nonnull UZTTicketInfo*)ticket
+{
+    return [[self alloc] initWithTicket:ticket];
+}
+
+- (nonnull instancetype)initWithTicket:(nonnull UZTTicketInfo*)ticket
+{
+    self = [super init];
+    
+    self.ticket = ticket;
+    self.passenger = ticket.passengerFullname;
+    self.train = ticket.trainName;
+    self.wagon = ticket.wagonNumber.stringValue;
+    self.route = ticket.departureStation;
+    
+    return self;
 }
 
 @end

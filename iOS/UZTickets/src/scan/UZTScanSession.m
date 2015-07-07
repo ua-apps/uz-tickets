@@ -97,7 +97,9 @@ didOutputMetadataObjects:(NSArray *)metadataObjects
 fromConnection:(AVCaptureConnection *)connection
 {
     AVMetadataMachineReadableCodeObject* result = [metadataObjects lastObject];
-    self.currentCallback(result.stringValue);
+    if (self.currentCallback != NULL) {
+        self.currentCallback(result.stringValue);
+    }
 }
 
 @end

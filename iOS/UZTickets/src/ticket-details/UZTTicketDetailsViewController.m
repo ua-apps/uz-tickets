@@ -27,10 +27,17 @@
 {
     [super viewDidLoad];
     
-    self.qrCodeImageView.image = [UIImage imageWithCIImage:
-                                  [CIFilter filterWithName:@"CIQRCodeGenerator"
-                                       withInputParameters:@{@"inputMessage": self.viewModel.qrData,
-                                                             @"inputCorrectionLevel": @"H"}].outputImage];
+    CIContext* context = [CIContext contextWithOptions:nil];
+    CIFilter* filter = [CIFilter filterWithName:@"CIQRCodeGenerator"
+                            withInputParameters:@{@"inputMessage": self.viewModel.qrData,
+                                                  @"inputCorrectionLevel": @"M"}];
+    CIImage* qrCodeImage = [filter.outputImage imageByApplyingTransform:CGAffineTransformMakeScale(9., 9.)];
+    CGImageRef image = [context createCGImage:qrCodeImage
+                                     fromRect:qrCodeImage.extent];
+    self.qrCodeImageView.image = [UIImage imageWithCGImage:image
+                                                     scale:2
+                                               orientation:UIImageOrientationUp];
+    CGImageRelease(image);
 }
 
 - (void)viewWillAppear:(BOOL)animated

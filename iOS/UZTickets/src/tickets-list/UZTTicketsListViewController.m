@@ -14,6 +14,44 @@
 #import "UZTTicketDetailsViewController.h"
 #import "UZTScanViewController.h"
 
+@interface UZTTicketCell : UITableViewCell
+
+@property UZTTicketCellViewModel* viewModel;
+
+@property IBOutlet UILabel* passengerLabel;
+@property IBOutlet UILabel* trainLabel;
+@property IBOutlet UILabel* wagonLabel;
+@property IBOutlet UILabel* routeLabel;
+
+@end
+
+@implementation UZTTicketCell
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    RAC(self, passengerLabel.text) = RACObserve(self, viewModel.passenger);
+    RAC(self, trainLabel.text) = [RACObserve(self, viewModel.train) map:^NSString*(NSString* value) {
+        return (value.length > 0) ? [@"train# " stringByAppendingString:value] : nil;
+    }];
+    RAC(self, wagonLabel.text) = [RACObserve(self, viewModel.wagon) map:^NSString*(NSString* value) {
+        return (value.length > 0) ? [@"wagon# " stringByAppendingString:value] : nil;
+    }];
+    RAC(self, routeLabel.text) = RACObserve(self, viewModel.route);
+    
+    return self;
+}
+
+- (void)prepareForReuse
+{
+    self.viewModel = nil;
+}
+
+@end
+
+
+
 @interface UZTTicketsListViewController ()
 
 @property (nullable) NSIndexPath* selectedCellIndexPath;
@@ -35,6 +73,10 @@
      withSignalOfArguments:[[RACObserve(self, viewModel.scanViewModel)
                              filter:^BOOL(id value) { return (value != nil); }]
                             mapReplace:[RACTuple new]]];
+    
+    [self.tableView rac_liftSelector:@selector(reloadData)
+               withSignalOfArguments:[RACObserve(self, viewModel.tickets).distinctUntilChanged
+                                      mapReplace:[RACTuple new]]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -96,8 +138,10 @@
         return [tableView dequeueReusableCellWithIdentifier:@"add cell" forIndexPath:indexPath];
     };
     
-    UITableViewCell* (^ticketCell)(void) = ^{
-        return [tableView dequeueReusableCellWithIdentifier:@"ticket cell" forIndexPath:indexPath];
+    UZTTicketCell* (^ticketCell)(void) = ^{
+        UZTTicketCell* cell = [tableView dequeueReusableCellWithIdentifier:@"ticket cell" forIndexPath:indexPath];
+        cell.viewModel = self.viewModel.tickets[indexPath.row-1];
+        return cell;
     };
     
     if (indexPath.row == 0) {

@@ -9,12 +9,17 @@
 #import "UZTScanViewModel.h"
 #import "UZTTicketInfo.h"
 
+@interface UZTScanViewModel ()
+
+@property UZTTicketInfo* scannedTicket;
+
+@end
+
 @implementation UZTScanViewModel
 
 - (void)didScanQRCode:(NSString *)codeContents
 {
-    UZTTicketInfo* newTicketInfo = [UZTTicketInfo newWithString:codeContents];
-    NSLog(@"Ticket scanned: %@", newTicketInfo.infoString);
+    self.scannedTicket = [UZTTicketInfo newWithString:codeContents];
 }
 
 @end

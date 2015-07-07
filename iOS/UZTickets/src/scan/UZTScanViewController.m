@@ -11,6 +11,8 @@
 #import "UZTScanViewModel.h"
 #import "UZTScanSession.h"
 
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 @interface UZTScanViewController ()
 
 @property UZTScanSession* scanningSession;
@@ -25,6 +27,10 @@
     
     self.scanningSession = [UZTScanSession new];
     [self.view.layer insertSublayer:self.scanningSession.layer atIndex:0];
+    
+    [self rac_liftSelector:@selector(dismiss) withSignalOfArguments:[[RACObserve(self, viewModel.scannedTicket) filter:^BOOL(id value) {
+        return (value != nil);
+    }] mapReplace:[RACTuple new]]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -48,6 +54,11 @@
     [super viewWillLayoutSubviews];
     
     self.scanningSession.layer.frame = self.view.bounds;
+}
+
+- (void)dismiss
+{
+    [self performSegueWithIdentifier:@"unwind scan" sender:self];
 }
 
 @end

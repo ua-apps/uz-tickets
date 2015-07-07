@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class UZTTicketInfo;
 @interface UZTScanViewModel : NSObject
+
+@property (readonly) UZTTicketInfo* scannedTicket;
 
 - (void)didScanQRCode:(NSString*)codeContents;
 
