@@ -31,7 +31,12 @@
     CIFilter* filter = [CIFilter filterWithName:@"CIQRCodeGenerator"
                             withInputParameters:@{@"inputMessage": self.viewModel.qrData,
                                                   @"inputCorrectionLevel": @"M"}];
-    CIImage* qrCodeImage = [filter.outputImage imageByApplyingTransform:CGAffineTransformMakeScale(9., 9.)];
+    CGRect initialCodeRect = filter.outputImage.extent;
+    CGFloat scaleFactor = [UIScreen mainScreen].scale;
+    CGSize resultImageSize = CGSizeMake(300*scaleFactor, 300*scaleFactor);
+    CGAffineTransform scaleImageTransform = CGAffineTransformMakeScale(resultImageSize.width/initialCodeRect.size.width,
+                                                                       resultImageSize.height/initialCodeRect.size.height);
+    CIImage* qrCodeImage = [filter.outputImage imageByApplyingTransform:scaleImageTransform];
     CGImageRef image = [context createCGImage:qrCodeImage
                                      fromRect:qrCodeImage.extent];
     self.qrCodeImageView.image = [UIImage imageWithCGImage:image
