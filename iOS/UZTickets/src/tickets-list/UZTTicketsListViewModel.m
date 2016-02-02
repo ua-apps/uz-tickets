@@ -99,6 +99,30 @@
     self.selectedTicketViewModel = [UZTTicketDetailsViewModel newWithTicket:ticket.ticket];
 }
 
+- (void)didDeleteTicket:(nonnull UZTTicketCellViewModel*)ticket
+{
+    NSMutableArray* tickets = self.tickets.mutableCopy;
+    [tickets removeObject:ticket];
+    
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
+    NSString* documentsDirectory = paths.firstObject;
+    NSString* filePath = [documentsDirectory stringByAppendingString:@"tickets.json"];
+    
+    NSArray* json = [tickets.rac_sequence map:^id(UZTTicketCellViewModel* value) {
+        return value.ticket.infoString;
+    }].array;
+    
+    NSError* serializationError;
+    NSData* latestTicketsData = [NSJSONSerialization dataWithJSONObject:json
+                                                                options:0
+                                                                  error:&serializationError];
+    NSAssert(serializationError == nil, @"Serialization error: %@", serializationError);
+    
+    [latestTicketsData writeToFile:filePath atomically:YES];
+    
+    self.tickets = tickets.copy;
+}
+
 @end
 
 

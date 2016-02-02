@@ -38,6 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)addNewTicket;
 - (void)didSelectTicket:(UZTTicketCellViewModel*)ticket;
+- (void)didDeleteTicket:(UZTTicketCellViewModel*)ticket;
 
 @end
 NS_ASSUME_NONNULL_END

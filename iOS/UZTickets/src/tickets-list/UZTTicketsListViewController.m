@@ -65,18 +65,18 @@
     [super viewDidLoad];
     
     [self rac_liftSelector:@selector(navigateToTicketDetails)
-     withSignalOfArguments:[[RACObserve(self, viewModel.selectedTicketViewModel)
+     withSignalOfArguments:[[[RACObserve(self, viewModel.selectedTicketViewModel)
                              filter:^BOOL(id value) { return (value != nil); }]
-                            mapReplace:[RACTuple new]]];
+                            mapReplace:[RACTuple new]] deliverOnMainThread]];
     
     [self rac_liftSelector:@selector(navigateToAddTicket)
-     withSignalOfArguments:[[RACObserve(self, viewModel.scanViewModel)
+     withSignalOfArguments:[[[RACObserve(self, viewModel.scanViewModel)
                              filter:^BOOL(id value) { return (value != nil); }]
-                            mapReplace:[RACTuple new]]];
+                            mapReplace:[RACTuple new]] deliverOnMainThread]];
     
     [self.tableView rac_liftSelector:@selector(reloadData)
-               withSignalOfArguments:[RACObserve(self, viewModel.tickets).distinctUntilChanged
-                                      mapReplace:[RACTuple new]]];
+               withSignalOfArguments:[[RACObserve(self, viewModel.tickets).distinctUntilChanged
+                                      mapReplace:[RACTuple new]] deliverOnMainThread]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -149,6 +149,23 @@
     } else {
         return ticketCell();
     }
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return indexPath.row > 0;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.viewModel didDeleteTicket:self.viewModel.tickets[indexPath.row-1]];
+    }
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return indexPath.row > 0 ? UITableViewCellEditingStyleDelete : UITableViewCellEditingStyleNone;
 }
 
 #pragma mark - UITableViewDelegate
